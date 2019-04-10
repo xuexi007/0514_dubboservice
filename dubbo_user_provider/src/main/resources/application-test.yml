@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    include: db
+logging:
+  level:
+    com:
+      offcn:
+        service: debug
+server:
+  port: -1
+dubbo:
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+  protocol:
+    port: -1
+  application:
+    name: dubbo-user-provider
+  scan:
+    basePackages: com.offcn.service
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
